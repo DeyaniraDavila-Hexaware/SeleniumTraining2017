@@ -1,6 +1,7 @@
 package test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 // Selenium webdriver library
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -33,11 +34,15 @@ public class FirstSeleniumScript {
 		options.addArguments("--start-maximized");
 		options.addArguments("--disable-extensions");
 		
+		//capabilities.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
+		
+		
 		// 4. Release a driver without options
 		//driver = new ChromeDriver();
 		
 		// 4. Release a driver with options
 		driver = new ChromeDriver(options);
+		
 		
 		// Firefox
 		// driver = new FirefoxDriver();
@@ -46,6 +51,11 @@ public class FirstSeleniumScript {
 		
 		// 5. Navigate to a page
 		driver.navigate().to("https://www.google.com");
+		
+		//JavascriptExecutor executor = (JavascriptExecutor)driver;
+		//executor.executeScript("document.body.style.zoom = '1'"); // 100%
+		
+			
 		
 		try{
 			WebElement element;
