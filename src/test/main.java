@@ -1,8 +1,12 @@
 package test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class main {
 
@@ -28,11 +32,13 @@ public class main {
 		// 4. Release a driver with options
 		driver = new ChromeDriver(options);
 				
-				
-		SearchLinks links = new SearchLinks("http://demoqa.com/", driver);
-		links.ClickOnContact("Contact");
+		// Day 2 links and waits	
+		//SearchLinks links = new SearchLinks("http://demoqa.com/", driver);
+		//links.ClickOnContact("Contact");
 		
-		driver.quit();
+		//driver.quit();
 	}
 
+	
+	
 }
