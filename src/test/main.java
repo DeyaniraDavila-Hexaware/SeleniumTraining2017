@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,8 +39,52 @@ public class main {
 		//links.ClickOnContact("Contact");
 		
 		//driver.quit();
+		
+		
+		// Call the CloseWindow method
+		CloseWindow(driver);
 	}
 
-	
+	public static void CloseWindow(WebDriver driver){
+		// http://www.popuptest.com/popuptest1.html");
+		
+		// 1 navigate to the window
+		driver.get("http://www.popuptest.com/popuptest1.html");
+		
+		try {
+			Thread.sleep(5000);
+		
+		
+			// Close
+			driver.close();
+		
+			
+			Thread.sleep(10000);
+			
+			
+			// Get all open windows from driver
+			Set<String> windows = driver.getWindowHandles();
+			String windowChild;
+			
+			// for each window, perform a switch
+			for(String window : windows){
+				windowChild = window;
+				driver.switchTo().window(windowChild);	
+				
+			}
+			
+			Thread.sleep(5000);
+			
+			driver.close();
+			
+			// quit will close all browsers from driver
+			driver.quit();
+		
+		
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }

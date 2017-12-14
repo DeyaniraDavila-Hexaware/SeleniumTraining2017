@@ -94,19 +94,29 @@ public class Registration {
 		 
 		 
 		 
-		 
-		// Handle Selects using Selenium WebDriver
-		element = driver.findElement(By.id("dropdown_7"));
-		Select dropdown = new Select(element);
-		// Select By Index
-		dropdown.selectByIndex(2);
-		// Select By Value
-		dropdown.selectByValue("India");
-		// Select by visible Text
-		dropdown.selectByVisibleText("Mexico");
-		
-		
-		
-		
+		 try{
+			// Handle Selects using Selenium WebDriver
+			element = driver.findElement(By.id("dropdown_7"));
+			Select dropdown = new Select(element);
+			// Select By Index
+			dropdown.selectByIndex(2);
+			// Select By Value
+			dropdown.selectByValue("India");
+			// Select by visible Text
+			dropdown.selectByVisibleText("Mexico");
+			
+			// Add exceptions
+			try{
+				element = driver.findElement(By.name("addadaasd"));
+				}
+			catch(NoSuchElementException exception){
+				System.out.println("Here is an error where trying to locate addadaasd!!!" + exception.getMessage());
+			}
+			
+			System.out.println("Continue");
+			 }
+		 catch (Exception c){
+			 System.out.println("crash");
+		 }
 	}
 }
